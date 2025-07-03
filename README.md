@@ -1,22 +1,19 @@
 
-Welcome to **iJump** — A Clumsy, unquie and difficult adventure crafted with passion in **Godot 4.4.1** made by a solo dev: **Owen C.**
+Welcome to **LUNARNIGHT** — A unqiue horror game crafted with passion in **Godot 4.4.1** made by a solo dev: **Owen C.**
 
 ---
 
 ## About the Game
 
-Hold and jump through a vibrant world full of surprises!
+Explore the forest and find a way out.
  
-- **Challenging levels** that test your skills
-- **Eye-catching pixel art & animations** designed to pop on every screen  
 - **Solo-crafted indie** from scratch by Owen C., bringing you pure creativity
 
 ---
 
 ## Features
 
-- Awkward movement, platforming mechanics  
-- Varied level designs that ramp up in difficulty  
+- Jumpscares
 - Hidden secrets
 - Unquie Soundtrack and sound effects 
 - Built on **Godot 4.4.1**, harnessing the latest open-source power  
@@ -26,16 +23,8 @@ Hold and jump through a vibrant world full of surprises!
 ## Controls
 
 - **Arrow keys / WASD** – Move & jump  
-- **Spacebar** – Hold for jump
+- **Shift** – Hold for slow walk with no sound
 - **Escape** – Pause
-
----
-
-## How to Play
-
-1. Run and jump across platforms without falling  
-2. Avoid enemies and climb the levels
-4. Compete for the fastest time on the leaderboard!  
 
 ---
 
@@ -45,23 +34,22 @@ Found a bug? Got a killer idea? I am also looking for assets & music/sound effec
 
 - Twitter/X: [@owenomc_](https://x.com/owenomc_)
 - Email: owenmcrandall@gmail.com
-- Issues & suggestions: *Coming soon!*
 
 ---
 
 ## Download & Run
 
-Download the latest build and jump right in!  
-*Windows 11*
+Download the latest build and get started!  
+*Windows 11* - Made primarily for 1080p & 1440p
 
 ---
 
 ## Credits
 
 **Owen C.** – Designer, developer, artist, tester, hype man.
-Godot Engine – The magic behind the scenes.
-Assets - KayKit_DungeonRemastered_1.1_FREE
-Audio - Mixkit/mixkit-classical-6-713.mp3
+Godot Engine – 4.4.1 Stable
+Assets - TBD
+Audio - TBD
 
 ---
 
@@ -71,4 +59,4 @@ Feel free to play, share, and stream! Feel free to use the code and assets
 
 ---
 
-Thanks for playing iJump — you can always jump higher!
+Thanks for playing LUUNARNIGHT — Keep on exploring!
