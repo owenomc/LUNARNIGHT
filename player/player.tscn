@@ -1,8 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://cm8ctnojcqo02"]
+[gd_scene load_steps=6 format=3 uid="uid://cm8ctnojcqo02"]
 
 [ext_resource type="PackedScene" uid="uid://201dt1njvo7k" path="res://assets/gameObjects/KayKit_Skeletons_1.0_FREE/KayKit_Skeletons_1.0_FREE/characters/gltf/Skeleton_Rogue.glb" id="1_oul6g"]
 [ext_resource type="Script" uid="uid://dbrbjvdtmr5a1" path="res://player/player.gd" id="1_yw30f"]
-[ext_resource type="Theme" uid="uid://dy58d31fw2wn8" path="res://themes/text_normal.tres" id="3_qjkh3"]
 [ext_resource type="AudioStream" uid="uid://b7ef7uxg28bjo" path="res://assets/audio/land2-43790.mp3" id="5_g6k8r"]
 [ext_resource type="PackedScene" uid="uid://b4a4aa3xn8vvp" path="res://assets/gameObjects/flashlight/flashlight.tscn" id="5_qjkh3"]
 
@@ -18,19 +17,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="TimerLabel" type="Label" parent="PlayerUI"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -42.0
-offset_right = 42.0
-offset_bottom = 23.0
-grow_horizontal = 2
-theme = ExtResource("3_qjkh3")
-theme_override_font_sizes/font_size = 20
-text = "00:00"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)

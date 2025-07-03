@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cv5gn1uopx337"]
 
 [ext_resource type="Script" uid="uid://dosb81i6gypu4" path="res://levels/map/map.gd" id="1_e8iiq"]
-[ext_resource type="PackedScene" uid="uid://b70cmekssahmq" path="res://levels/Rocky Clouds/Platform1.tscn" id="2_wegon"]
+[ext_resource type="PackedScene" uid="uid://b70cmekssahmq" path="res://levels/map/ground.tscn" id="2_wegon"]
 [ext_resource type="PackedScene" uid="uid://cm8ctnojcqo02" path="res://player/player.tscn" id="3_f6owc"]
 [ext_resource type="PackedScene" uid="uid://b1a5p4ctadrct" path="res://assets/skybox/skydome1.tscn" id="10_3exy5"]
 

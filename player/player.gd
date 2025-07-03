@@ -21,8 +21,8 @@ extends CharacterBody3D
 # === STATE ===
 var yaw := 0.0
 var pitch := 0.0
-const PITCH_MIN := deg_to_rad(-40)
-const PITCH_MAX := deg_to_rad(40)
+const PITCH_MIN := deg_to_rad(-20)
+const PITCH_MAX := deg_to_rad(20)
 var is_first_person := true
 
 var can_play_sound := true

@@ -1,0 +1,60 @@
+[gd_scene load_steps=10 format=3 uid="uid://b5g37sr5k0ay"]
+
+[ext_resource type="PackedScene" uid="uid://b70cmekssahmq" path="res://levels/map/ground.tscn" id="1_oyin6"]
+[ext_resource type="PackedScene" uid="uid://cm8ctnojcqo02" path="res://player/player.tscn" id="2_twnl8"]
+[ext_resource type="PackedScene" uid="uid://b004tjgtt0gdn" path="res://NPCs/enemy1.tscn" id="3_4pd3f"]
+
+[sub_resource type="Environment" id="Environment_twnl8"]
+background_mode = 1
+background_color = Color(1, 1, 1, 1)
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_4pd3f"]
+vertices = PackedVector3Array(-49.5, 0.5, 5.75, -2.5, 0.5, 5.75, -2.25, 0.5, 3.5, 0, 0.5, -49.5, -49.5, 0.5, -49.5, 0, 0.5, 3.5, 2.25, 0.5, 3.5, 2.5, 0.5, 5.75, 49.5, 0.5, 5.75, 49.5, 0.5, -49.5, -1.5, 3.25, 4.5, -1.5, 3.25, 9, 1.5, 3.25, 9, 1.5, 3.25, 4.5, -1.25, 0.5, 4.75, -1.25, 0.5, 8.75, 1.25, 0.5, 8.75, 1.25, 0.5, 4.75, -49.5, 0.5, 7.75, -2.5, 0.5, 7.75, 2.5, 0.5, 7.75, 49.5, 0.5, 7.75, 0, 0.5, 49.5, 0, 0.5, 10, -2.25, 0.5, 10, -49.5, 0.5, 49.5, 2.25, 0.5, 10, 49.5, 0.5, 49.5)
+polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 4), PackedInt32Array(2, 4, 3), PackedInt32Array(3, 5, 2), PackedInt32Array(7, 6, 8), PackedInt32Array(8, 6, 9), PackedInt32Array(9, 6, 3), PackedInt32Array(6, 5, 3), PackedInt32Array(13, 12, 10), PackedInt32Array(10, 12, 11), PackedInt32Array(17, 16, 14), PackedInt32Array(14, 16, 15), PackedInt32Array(0, 1, 18), PackedInt32Array(18, 1, 19), PackedInt32Array(7, 8, 20), PackedInt32Array(20, 8, 21), PackedInt32Array(24, 23, 22), PackedInt32Array(24, 22, 19), PackedInt32Array(19, 22, 18), PackedInt32Array(18, 22, 25), PackedInt32Array(22, 23, 26), PackedInt32Array(26, 20, 22), PackedInt32Array(22, 20, 21), PackedInt32Array(22, 21, 27)]
+geometry_collision_mask = 1
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_4pd3f"]
+size = Vector2(100, 100)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4pd3f"]
+albedo_color = Color(1, 0.54902, 0.776471, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_2yic8"]
+material = SubResource("StandardMaterial3D_4pd3f")
+size = Vector3(3.73, 2.73, 5.13)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_4pd3f"]
+data = PackedVector3Array(-1.865, 1.365, 2.565, 1.865, 1.365, 2.565, -1.865, -1.365, 2.565, 1.865, 1.365, 2.565, 1.865, -1.365, 2.565, -1.865, -1.365, 2.565, 1.865, 1.365, -2.565, -1.865, 1.365, -2.565, 1.865, -1.365, -2.565, -1.865, 1.365, -2.565, -1.865, -1.365, -2.565, 1.865, -1.365, -2.565, 1.865, 1.365, 2.565, 1.865, 1.365, -2.565, 1.865, -1.365, 2.565, 1.865, 1.365, -2.565, 1.865, -1.365, -2.565, 1.865, -1.365, 2.565, -1.865, 1.365, -2.565, -1.865, 1.365, 2.565, -1.865, -1.365, -2.565, -1.865, 1.365, 2.565, -1.865, -1.365, 2.565, -1.865, -1.365, -2.565, 1.865, 1.365, 2.565, -1.865, 1.365, 2.565, 1.865, 1.365, -2.565, -1.865, 1.365, 2.565, -1.865, 1.365, -2.565, 1.865, 1.365, -2.565, -1.865, -1.365, 2.565, 1.865, -1.365, 2.565, -1.865, -1.365, -2.565, 1.865, -1.365, 2.565, 1.865, -1.365, -2.565, -1.865, -1.365, -2.565)
+
+[node name="TestAi" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_twnl8")
+
+[node name="Player" parent="." instance=ExtResource("2_twnl8")]
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 50, 0)
+
+[node name="ground" parent="." instance=ExtResource("1_oyin6")]
+
+[node name="Enemy1" parent="." instance=ExtResource("3_4pd3f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.25706, 1, 17.4311)
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+navigation_mesh = SubResource("NavigationMesh_4pd3f")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="NavigationRegion3D"]
+visible = false
+mesh = SubResource("PlaneMesh_4pd3f")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.47405, 6.79043)
+mesh = SubResource("BoxMesh_2yic8")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/MeshInstance3D/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_4pd3f")
