@@ -1,0 +1,178 @@
+[gd_scene load_steps=7 format=3 uid="uid://bnjhjgyaredu8"]
+
+[ext_resource type="Script" uid="uid://crxqogppxvoxy" path="res://menu_ui/paused.gd" id="1_50o8w"]
+[ext_resource type="Theme" uid="uid://dy58d31fw2wn8" path="res://themes/text_normal.tres" id="2_bmjud"]
+[ext_resource type="AudioStream" uid="uid://cuebf5ffmk1af" path="res://assets/audio/mixkit/mixkit-cool-interface-click-tone-2568.wav" id="3_xtatw"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_50o8w"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t1llr"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bmjud"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[node name="PausedMenu" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_50o8w")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/focus = SubResource("StyleBoxFlat_50o8w")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_50o8w")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_50o8w")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_50o8w")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_50o8w")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_50o8w")
+theme_override_styles/hover = SubResource("StyleBoxFlat_50o8w")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_50o8w")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_50o8w")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_50o8w")
+theme_override_styles/normal = SubResource("StyleBoxFlat_50o8w")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -178.0
+offset_top = -80.5
+offset_right = 178.0
+offset_bottom = 80.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="Label" type="Label" parent="Control/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_bmjud")
+theme_override_colors/font_color = Color(0.745098, 0.364706, 0.372549, 1)
+theme_override_colors/font_shadow_color = Color(0.745098, 0.364706, 0.372549, 1)
+theme_override_font_sizes/font_size = 125
+text = "PAUSED"
+horizontal_alignment = 1
+
+[node name="ButtonMain" type="Button" parent="Control/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("2_bmjud")
+theme_override_colors/font_disabled_color = Color(0.745098, 0.364706, 0.372549, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.745098, 0.364706, 0.372549, 1)
+theme_override_colors/font_hover_color = Color(0.745098, 0.364706, 0.372549, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 20
+theme_override_styles/focus = SubResource("StyleBoxFlat_t1llr")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_t1llr")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_t1llr")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_t1llr")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_t1llr")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_t1llr")
+theme_override_styles/hover = SubResource("StyleBoxFlat_t1llr")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_t1llr")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_t1llr")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_t1llr")
+theme_override_styles/normal = SubResource("StyleBoxFlat_t1llr")
+text = "MENU"
+icon_alignment = 1
+
+[node name="ResumeButton" type="Button" parent="Control/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("2_bmjud")
+theme_override_colors/font_disabled_color = Color(0.745098, 0.364706, 0.372549, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.745098, 0.364706, 0.372549, 1)
+theme_override_colors/font_hover_color = Color(0.745098, 0.364706, 0.372549, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 20
+theme_override_styles/focus = SubResource("StyleBoxFlat_t1llr")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_t1llr")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_t1llr")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_t1llr")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_t1llr")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_t1llr")
+theme_override_styles/hover = SubResource("StyleBoxFlat_t1llr")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_t1llr")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_t1llr")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_t1llr")
+theme_override_styles/normal = SubResource("StyleBoxFlat_t1llr")
+text = "RESUME"
+icon_alignment = 1
+
+[node name="ButtonGameVersion" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -106.5
+offset_top = -21.0
+offset_right = 106.5
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+theme = ExtResource("2_bmjud")
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/focus = SubResource("StyleBoxFlat_bmjud")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_bmjud")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_bmjud")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_bmjud")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_bmjud")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_bmjud")
+theme_override_styles/hover = SubResource("StyleBoxFlat_bmjud")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_bmjud")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_bmjud")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_bmjud")
+theme_override_styles/normal = SubResource("StyleBoxFlat_bmjud")
+text = "VERSION 0.0.1"
+
+[node name="button_sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_xtatw")
+
+[connection signal="pressed" from="Control/VBoxContainer/ButtonMain" to="." method="_on_button_main_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/ResumeButton" to="." method="_on_resume_button_pressed"]

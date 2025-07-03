@@ -1,0 +1,35 @@
+[gd_scene load_steps=9 format=3 uid="uid://b1a5p4ctadrct"]
+
+[ext_resource type="Texture2D" uid="uid://6ymc11wie8rc" path="res://assets/skybox/FS002_Day_Sunless.png" id="1_hs5ns"]
+[ext_resource type="Texture2D" uid="uid://d25wmvl7quat2" path="res://assets/skybox/space_spheremaps/blue_nebulae_1.png" id="2_artjk"]
+[ext_resource type="Script" uid="uid://vxllhfytrfx1" path="res://assets/skybox/skydome1.gd" id="2_qqmc5"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_hs5ns"]
+panorama = ExtResource("1_hs5ns")
+
+[sub_resource type="Sky" id="Sky_yp3po"]
+sky_material = SubResource("PanoramaSkyMaterial_hs5ns")
+
+[sub_resource type="Environment" id="Environment_qqmc5"]
+background_mode = 1
+sky = SubResource("Sky_yp3po")
+fog_light_color = Color(3.27289e-06, 0.616508, 0.715248, 1)
+volumetric_fog_sky_affect = 0.2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j6f8j"]
+albedo_texture = ExtResource("2_artjk")
+
+[sub_resource type="SphereMesh" id="SphereMesh_c4n7l"]
+material = SubResource("StandardMaterial3D_j6f8j")
+flip_faces = true
+
+[node name="Skydome1" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_qqmc5")
+
+[node name="SkyDome" type="MeshInstance3D" parent="."]
+transform = Transform3D(5000, 0, 0, 0, 5000, 0, 0, 0, 5000, 0, 0, 0)
+mesh = SubResource("SphereMesh_c4n7l")
+script = ExtResource("2_qqmc5")
+rotation_speed = 0.001
