@@ -1,8 +1,21 @@
 extends Node3D
 
-@onready var player: Node3D = $Player
+var PressFScene := preload("res://ui/pressF.tscn")
+var press_f_instance
 
-func _on_reset_zone_body_entered(body: Node3D) -> void:
-	if body == player:
-		player.global_position = Vector3(2, 0, -3)
-		player.velocity = Vector3.ZERO  # Ensure 'velocity' exists in Player
+func _ready() -> void:
+	show_press_f()
+
+func show_press_f() -> void:
+	if press_f_instance == null:
+		press_f_instance = PressFScene.instantiate()
+		get_tree().current_scene.add_child(press_f_instance)
+
+func hide_press_f() -> void:
+	if press_f_instance != null:
+		press_f_instance.queue_free()
+		press_f_instance = null
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("flashlight_toggle"):  # Default key for "F" if using Input Map
+		hide_press_f()

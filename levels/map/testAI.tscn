@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://b70cmekssahmq" path="res://levels/map/ground.tscn" id="1_oyin6"]
 [ext_resource type="PackedScene" uid="uid://cm8ctnojcqo02" path="res://player/player.tscn" id="2_twnl8"]
-[ext_resource type="PackedScene" uid="uid://b004tjgtt0gdn" path="res://NPCs/enemy1.tscn" id="3_4pd3f"]
+[ext_resource type="PackedScene" uid="uid://b004tjgtt0gdn" path="res://NPCs/enemy_1.tscn" id="3_4pd3f"]
 
 [sub_resource type="Environment" id="Environment_twnl8"]
 background_mode = 1
@@ -17,7 +17,7 @@ geometry_collision_mask = 1
 size = Vector2(100, 100)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4pd3f"]
-albedo_color = Color(1, 0.54902, 0.776471, 1)
+albedo_color = Color(0.221472, 0.193359, 0.23551, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_2yic8"]
 material = SubResource("StandardMaterial3D_4pd3f")
@@ -31,30 +31,30 @@ data = PackedVector3Array(-1.865, 1.365, 2.565, 1.865, 1.365, 2.565, -1.865, -1.
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_twnl8")
 
-[node name="Player" parent="." instance=ExtResource("2_twnl8")]
-
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 50, 0)
 
 [node name="ground" parent="." instance=ExtResource("1_oyin6")]
 
-[node name="Enemy1" parent="." instance=ExtResource("3_4pd3f")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.25706, 1, 17.4311)
-
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 navigation_mesh = SubResource("NavigationMesh_4pd3f")
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="NavigationRegion3D"]
+[node name="Ground" type="MeshInstance3D" parent="NavigationRegion3D"]
 visible = false
 mesh = SubResource("PlaneMesh_4pd3f")
 skeleton = NodePath("../..")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D"]
+[node name="Box" type="MeshInstance3D" parent="NavigationRegion3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.47405, 6.79043)
 mesh = SubResource("BoxMesh_2yic8")
 skeleton = NodePath("../..")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/MeshInstance3D"]
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Box"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/MeshInstance3D/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Box/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_4pd3f")
+
+[node name="enemy1" parent="." instance=ExtResource("3_4pd3f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.78699, 1, -7.33749)
+
+[node name="Player" parent="." instance=ExtResource("2_twnl8")]

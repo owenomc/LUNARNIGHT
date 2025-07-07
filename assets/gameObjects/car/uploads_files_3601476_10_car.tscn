@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://c6a8458ttp0ui"]
+
+[ext_resource type="PackedScene" uid="uid://cpte5bqgq06gg" path="res://assets/gameObjects/car/uploads_files_3601476_10-Car.fbx" id="1_co5gi"]
+
+[node name="uploads_files_3601476_10-Car" instance=ExtResource("1_co5gi")]

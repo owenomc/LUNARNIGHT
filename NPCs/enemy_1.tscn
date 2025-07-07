@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://b004tjgtt0gdn"]
+
+[ext_resource type="Script" uid="uid://u48heeojt3d8" path="res://NPCs/enemy_1.gd" id="1_r6j45"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r6j45"]
+albedo_color = Color(0.219608, 0.192157, 0.235294, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_2kv8m"]
+material = SubResource("StandardMaterial3D_r6j45")
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_r6j45"]
+
+[node name="enemy1" type="CharacterBody3D"]
+script = ExtResource("1_r6j45")
+vision_range = 7.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_2kv8m")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_r6j45")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+transform = Transform3D(-1, 8.74228e-08, 3.82137e-15, 0, -4.37114e-08, 1, 8.74228e-08, 1, 4.37114e-08, 0, 0, -0.5)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5)
